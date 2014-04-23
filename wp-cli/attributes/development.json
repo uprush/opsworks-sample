@@ -1,0 +1,12 @@
+{
+ "mysql" : {
+       "dbname" : "mydb",
+       "dbuser" : "myuser",
+       "dbpass" : "mypassword",
+       "dbhost" : "xxxx.ap-northeast-1.rds.amazonaws.com"
+  },
+
+ "wordpress_custom" : {
+       "wp_admin_email" : "xxx@xxxx.co.jp"
+  }
+}
