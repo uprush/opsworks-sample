@@ -8,13 +8,9 @@ package "curl" do
    action :install
 end
 
-remote_file "#{Chef::Config[:file_cache_path]}/wp-cli.phar" do
+remote_file "#{wpdir}/wp" do
   source "https://raw.github.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
-end
-
-execute "wp-cli install" do
-   command "cp #{Chef::Config[:file_cache_path]}/wp-cli.phar #{wpdir}/wp && chmod +x #{wpdir}/wp"
-   cwd "#{Chef::Config[:file_cache_path]}"
-   action :run
-   not_if { ::File.exists?("#{wpdir}/wp")}
+  owner "root"
+  group "root"
+  mode 00644
 end
